@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heloisa Brito Cavalcante</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: grid;
+            
+        }
+
+        .container.wrapper {
+            flex: 1;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+        }
+
+        .menu {
+            grid-column-start: 6;
+            grid-column-end: 12;
+            display: flex;
+            justify-content: center;/*centraliza o menu*/
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+        
+        }
+
+        footer {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 2px 0; /* reduzindo o rodapé*/
+            font-size: 5px;
+            line-height: 1.0;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none; /*remove as bolinhas*/
+            display: flex;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        a:link {
+            text-decoration: none;
+            padding: 8px 16px;
+            border: solid #506E6A 1px;
+        }
+
+        li {
+            float: left;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .portfolio {
+           text-align: center;
+           padding: 40px 20px;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; /* padroniza imagens */
+            border-radius: 8px;
+        }
+
+        .portfolio-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #506E6A;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .portfolio-item a:hover {
+            background: #304542;
+        }
+
+        /* Tema claro (padrão) */
+        body {
+         background-color: #ffffff;
+         color: #000000;
+         transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Tema escuro */
+         body.dark-mode {
+         background-color: #121212;
+         color: #ffffff;
+         }
+
+         body.dark-mode .portfolio-item { 
+          background-color: #1e1e1e;
+          color: #fff;
+          box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+
+        /* Links dentro dos cards */
+         body.dark-mode .portfolio-item a {
+         background-color: #333;
+         color: #fff;
+         }
+
+        /* Botão de alternância */
+        #toggleTheme {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 8px 12px;
+          font-size: 18px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        /* media query para dispositivos móveis */
+        @media only screen and (max-width: 767px) {
+            .wrapper {
+                grid-column-start: 1;
+                grid-column-end: 1;
+
+            }
+
+            .menu ul {
+               display: flex;
+               flex-direction: column; /* empilha os itens */
+               align-items: center;    /* centraliza os links */
+               gap: 10px;              /* espaço entre eles */
+               padding: 0;
+               margin: 0;
+            }
+
+            .menu li {
+               float: none;            /* remove o float */
+               width: 100%;            /* cada item ocupa toda a largura */
+               text-align: center;
+            }
+
+            .menu li a {
+                display: block;         /* transforma em bloco */
+                width: 100%;            /* ocupa toda a largura */
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <header class="container">
+        <h1 style="color: white; text-align: center;">Heloisa Brito Cavalcante</h1>
+        <br>
+    </header>
+    <nav class="container menu">
+        <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portifolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <section class="portfolio">
+    <h2>Meu Portfólio</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="projeto1.jpg" alt="Projeto 1">
+            <h3>Projeto 1</h3>
+            <p>Descrição breve do projeto.</p>
+            <a href="https://link-do-projeto1.com" target="_blank">Ver Projeto</a>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="projeto2.jpg" alt="Projeto 2">
+            <h3>Projeto 2</h3>
+            <p>Descrição breve do projeto.</p>
+            <a href="https://link-do-projeto2.com" target="_blank">Ver Projeto</a>
+        </div>
+
+        <div class="portfolio-item">
+            <img src="projeto3.jpg" alt="Projeto 3">
+            <h3>Projeto 3</h3>
+            <p>Descrição breve do projeto.</p>
+            <a href="https://link-do-projeto3.com" target="_blank">Ver Projeto</a>
+        </div>
+    </div>
+</section>
+   <button id="toggleTheme">🌙</button>
+    <script>
+     const button = document.getElementById('toggleTheme');
+     const body = document.body;
+
+       // Carrega preferência salva
+     if (localStorage.getItem('theme') === 'dark') {
+       body.classList.add('dark-mode');
+        button.textContent = '🌞'; // ícone de sol
+      }
+
+     button.addEventListener('click', () => {
+     body.classList.toggle('dark-mode');
+
+     if (body.classList.contains('dark-mode')) {
+      button.textContent = '🌞'; // sol para tema escuro
+      localStorage.setItem('theme', 'dark');
+     } else {
+      button.textContent = '🌙'; // lua para tema claro
+      localStorage.setItem('theme', 'light');
+     }
+      });
+    </script>
+
+
+    <footer class="container">
+        <h1>Atividade prática Fundamentos da Programação Web</h1>
+    </footer>
+    </div>
+</body>
+
+</html>

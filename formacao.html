@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heloisa Brito Cavalcante</title>
+    <style>
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: grid;
+            
+        }
+
+        .container.wrapper {
+            flex: 1;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+        }
+
+        .menu {
+            grid-column-start: 6;
+            grid-column-end: 12;
+            display: flex;
+            justify-content: center;/*centraliza o menu*/
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+        
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /*para quebra de linha*/
+        }
+
+        .card {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 200px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+         .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain; /*mantem a proporção da imagem*/
+            border-radius: 8px;
+        }
+    
+
+        footer {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 2px 0; /* reduzindo o rodapé*/
+            font-size: 5px;
+            line-height: 1.0;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none; /*remove as bolinhas*/
+            display: flex;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        a:link {
+            text-decoration: none;
+            padding: 8px 16px;
+            border: solid #506E6A 1px;
+        }
+
+        li {
+            float: left;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Tema claro (padrão) */
+        body {
+         background-color: #ffffff;
+         color: #000000;
+         transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Tema escuro */
+         body.dark-mode {
+         background-color: #121212;
+         color: #ffffff;
+        }
+
+        body.dark-mode .card { 
+         background-color: #1e1e1e;
+         color: #fff;
+         box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+
+        /* Botão de alternância */
+        #toggleTheme {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 8px 12px;
+          font-size: 18px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        /* media query para dispositivos móveis */
+        @media only screen and (max-width: 767px) {
+            .cards {
+               flex-direction: column; /* empilha os cards */
+               align-items: center;    /* centraliza */
+            }
+
+            .card {
+               width: 90%;             /* ocupa quase toda a largura da tela */
+               max-width: 350px;       /* limitação */
+            }
+            .menu ul {
+               display: flex;
+               flex-direction: column; /* empilha os itens */
+               align-items: center;    /* centraliza os links */
+               gap: 10px;              /* espaço entre eles */
+               padding: 0;
+               margin: 0;
+            }
+
+            .menu li {
+               float: none;            /* remove o float */
+               width: 100%;            /* cada item ocupa toda a largura */
+               text-align: center;
+            }
+
+            .menu li a {
+                display: block;         /* transforma em bloco */
+                width: 100%;            /* ocupa toda a largura */
+            }
+
+        }
+  
+    
+    </style>
+
+</head>
+<body>
+    <header class="container">
+        <h1 style="color: white; text-align: center;">Heloisa Brito Cavalcante</h1>
+        <br>
+    </header>
+    <nav class="container menu">
+        <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portifolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="container wrapper">
+        <div class="cards">
+            <div class="card">
+                <img src="ufpa.jpg" alt="UFPA">
+                <h2>Universidade Federal do Pará</h2>
+                <p>Bacharelado em Adminnistração de Empresas</p>
+                <p>Concluído em 2009</p>
+            </div>        
+        
+            <div class="card">
+                <img src="uerj.png" alt="UERJ">
+                <h2>Universidade do Estado do Rio de Janeiro</h2>
+                <p>Especialização em Gestão Logística</p>
+                <p>Concluído em 2014</p>
+            </div>
+            <div class="card">
+                <img src="estácio.png" alt="UNESA">
+                <h2>Universidade Estácio de Sá</h2>
+                <p>Especialização em Gestão de Projetos</p>
+                <p>Concluído em 2016</p>
+            </div>
+            <div class="card">
+                <img src="uninter.png" alt="UNINTER">
+                <h2>Centro Universitário Internacional</h2>
+                <p>Tecnologia em Ciência de Dados</p>
+                <p>Previsão de conclusão 2027</p>
+            </div>
+            <div class="card">
+                <img src="EF.jpg" alt="EF">
+                <h2>EF - Education First</h2>
+                <p>Proeficiência em língua inglesa</p>
+                <p>Intercâmbio finalizado com Nível C2</p>
+                <p>Concluído em 2011</p>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <button id="toggleTheme">🌙</button>
+    <script>
+     const button = document.getElementById('toggleTheme');
+     const body = document.body;
+
+       // Carrega preferência salva
+     if (localStorage.getItem('theme') === 'dark') {
+       body.classList.add('dark-mode');
+        button.textContent = '🌞'; // ícone de sol
+      }
+
+     button.addEventListener('click', () => {
+     body.classList.toggle('dark-mode');
+
+     if (body.classList.contains('dark-mode')) {
+      button.textContent = '🌞'; // sol para tema escuro
+      localStorage.setItem('theme', 'dark');
+     } else {
+      button.textContent = '🌙'; // lua para tema claro
+      localStorage.setItem('theme', 'light');
+     }
+      });
+    </script>
+
+    <footer class="container">
+        <h1>Atividade prática Fundamentos da Programação Web</h1>
+    </footer>
+    </div>
+</body>
+
+</html>

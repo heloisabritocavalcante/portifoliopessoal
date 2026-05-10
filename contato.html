@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heloisa Brito Cavalcante</title>
+    <style>
+
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        form {
+            background: #fff;
+            padding: 15px;
+            width: 50%;
+            
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center; /*centraliza horizontalmente*/
+            align-items: center; /*centraliza verticalmente*/
+            flex-direction: column;
+            width: 80%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            
+
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: gray;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .sucess {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .container {
+            display: grid;
+            
+        }
+
+        .container.wrapper {
+            flex: 1;
+        }
+
+        header {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+        }
+
+        .menu {
+            grid-column-start: 6;
+            grid-column-end: 12;
+            display: flex;
+            justify-content: center;/*centraliza o menu*/
+            align-items: center;
+            gap: 30px;
+            padding: 20px 0;
+        
+        }
+
+        footer {
+            grid-column-start: 1;
+            grid-column-end: 12;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 2px 0; /* reduzindo o rodapé*/
+            font-size: 5px;
+            line-height: 1.0;
+            margin-top: 20px;
+        }
+
+        main {
+            flex: 1; /*empurra i footer para baixo*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /*manter o título visível*/
+            padding: 40px 0;
+        }
+
+        ul {
+            list-style-type: none; /*remove as bolinhas*/
+            display: flex;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        a,
+        a:link {
+            text-decoration: none;
+            padding: 8px 16px;
+            border: solid #506E6A 1px;
+        }
+
+        li {
+            float: left;
+        }
+
+        a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Tema claro (padrão) */
+        .form-container {
+         background: #ffffff;
+         color: #000;
+         transition: background-color 0.3s, color 0.3s;
+        }
+
+        .form-container input,
+        .form-container textarea {
+          background: #f9f9f9;
+          color: #000;
+          border: 1px solid #ccc;
+          transition: background-color 0.3s, color 0.3s;
+        }
+
+        .form-container button {
+         background-color: gray;
+         color: white;
+         transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Tema escuro */
+        body.dark-mode .form-container {
+         background: #1e1e1e;
+         color: #fff;
+         box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+
+        body.dark-mode label{
+            color: black;
+        }
+
+        /* Campos do formulário */
+        body.dark-mode input,
+        body.dark-mode textarea {
+          background: #2a2a2a; /* fundo mais claro para contraste */
+          color: #fff;
+          border: 1px solid #555;
+        }
+
+        body.dark-mode .form-container input,
+        body.dark-mode .form-container textarea {
+         background: #2a2a2a;
+         color: #fff;
+         border: 1px solid #555;
+        }
+
+        body.dark-mode .form-container button {
+         background-color: #444;
+         color: #fff;
+        }
+
+        /* Botão */
+        body.dark-mode button {
+         background-color: #444;
+         color: #fff;
+        }
+
+        body.dark-mode button:hover {
+          background-color: #666;
+        }
+
+        /* Botão de alternância */
+        #toggleTheme {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 8px 12px;
+          font-size: 18px;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        /* media query para dispositivos móveis */
+        @media only screen and (max-width: 767px) {
+            .wrapper {
+                grid-column-start: 1;
+                grid-column-end: 1;
+
+            }
+
+            .menu ul {
+               display: flex;
+               flex-direction: column; /* empilha os itens */
+               align-items: center;    /* centraliza os links */
+               gap: 10px;              /* espaço entre eles */
+               padding: 0;
+               margin: 0;
+            }
+
+            .menu li {
+               float: none;            /* remove o float */
+               width: 100%;            /* cada item ocupa toda a largura */
+               text-align: center;
+            }
+
+            .menu li a {
+                display: block;         /* transforma em bloco */
+                width: 100%;            /* ocupa toda a largura */
+            }
+
+            form {
+                width: 80%;
+                padding: 20px;
+            }
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <header class="container">
+        <h1 style="color: white; text-align: center;">Heloisa Brito Cavalcante</h1>
+        <br>
+    </header>
+
+    <nav class="container menu">
+        <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portifolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <h2>Formulário de Contato</h2>
+    <div class="form-container">
+    <form id="contactForm">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email">
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+    <button type="submit">Enviar</button>
+    </form>
+    </div>
+    
+    <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // impede envio real
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
+      const resultado = document.getElementById("resultado");
+
+      if (!nome || !email || !mensagem) {
+        alert("Todos os campos são obrigatórios!");
+        return;
+      }
+
+      // Validação simples de e-mail
+      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regexEmail.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return;
+      }
+
+      // Simulação de envio
+      resultado.textContent = "Formulário enviado com sucesso!";
+      resultado.style.color = "green";
+
+      // Limpar campos
+      document.getElementById("contactForm").reset();
+    });
+    </script>
+
+    <button id="toggleTheme">🌙</button>
+    <script>
+     const button = document.getElementById('toggleTheme');
+     const body = document.body;
+
+       // Carrega preferência salva
+     if (localStorage.getItem('theme') === 'dark') {
+       body.classList.add('dark-mode');
+        button.textContent = '🌞'; // ícone de sol
+      }
+
+     button.addEventListener('click', () => {
+     body.classList.toggle('dark-mode');
+
+     if (body.classList.contains('dark-mode')) {
+      button.textContent = '🌞'; // sol para tema escuro
+      localStorage.setItem('theme', 'dark');
+     } else {
+      button.textContent = '🌙'; // lua para tema claro
+      localStorage.setItem('theme', 'light');
+     }
+      });
+    </script>
+  
+    <footer class="container">
+        <h1>Atividade prática Fundamentos da Programação Web</h1>
+    </footer>
+    </div>
+
+</body>
+
+</html>
